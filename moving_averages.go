@@ -53,6 +53,8 @@ func New(windowSize int) *MovingAverage {
 }
 
 func main() {
+
+	// Driver code
 	ma := New(6)
 	valuesArray := [...]int{23, 45, 34, 56, 78, 98, 9, 90, 45, 18, 99, 85, 91, 101, 97, 110, 100, 92, 81, 77, 73, 69, 85}
 

@@ -71,6 +71,8 @@ func (dll *DoubleLinkedList) WalkBackwards() {
 }
 
 func main() {
+
+	// Driver code
 	dll := DoubleLinkedList{}
 
 	dll.AddNode(Node{value: 5})
