@@ -70,7 +70,7 @@ func New(path string) *FileHash {
 func main() {
 
 	// Driver code
-	fileHash := New("test/test1")
+	fileHash := New("test")
 
 	err := fileHash.FindFiles()
 
@@ -85,4 +85,8 @@ func main() {
 	}
 
 	fileHash.GetIdenticalFiles()
+
+	// >>> go run dupe_files.go                                                                                                                                   (*master+6) 09:23:46
+	// Identical files: [test/a test/b.txt test/test1/c test/test1/test2/e test/test1/w test/test1/x test/test1/y test/test1/z]
+	// Identical files: [test/c.txt test/d.txt test/test1/test2/f]
 }
