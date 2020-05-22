@@ -59,7 +59,7 @@ func (fh FileHash) GetIdenticalFiles() {
 	}
 }
 
-// New instance of MovingAverage
+// New instance of FileHash
 func New(path string) *FileHash {
 	return &FileHash{
 		path:         path,
