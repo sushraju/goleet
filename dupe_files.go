@@ -15,8 +15,8 @@ type FileHash struct {
 	fileNamesMap map[string][]string
 }
 
-// FindFiles gathers all the files in a nested directory
-func (fh *FileHash) FindFiles() error {
+// FindAllFiles gathers all the files in a nested directory
+func (fh *FileHash) FindAllFiles() error {
 	err := filepath.Walk(fh.path, func(path string, f os.FileInfo, err error) error {
 		fh.allFiles = append(fh.allFiles, path)
 		return nil
@@ -72,7 +72,7 @@ func main() {
 	// Driver code
 	fileHash := New("test")
 
-	err := fileHash.FindFiles()
+	err := fileHash.FindAllFiles()
 
 	if err != nil {
 		fmt.Print("Error while walking the directory", err)
