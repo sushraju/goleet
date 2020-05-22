@@ -39,7 +39,7 @@ func (dll *DoubleLinkedList) AddToBeginning(node Node) {
 
 // Length of the list is returned
 func (dll *DoubleLinkedList) Length() int {
-	var length int = 0
+	var length int
 	currentNode := dll.head
 	if currentNode != nil {
 		for currentNode != nil {
