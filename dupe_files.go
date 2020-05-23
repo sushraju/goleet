@@ -34,10 +34,11 @@ func (fh *FileHash) BuildFileNamesMap() error {
 			if fi.Mode().IsRegular() {
 				dat, err := ioutil.ReadFile(fn)
 				if err == nil {
-					if len(fh.fileNamesMap[string(hash.Sum([]byte(dat)))]) == 0 {
-						fh.fileNamesMap[string(hash.Sum([]byte(dat)))] = []string{fn}
+					key := string(hash.Sum([]byte(dat)))
+					if len(fh.fileNamesMap[key]) == 0 {
+						fh.fileNamesMap[key] = []string{fn}
 					} else {
-						fh.fileNamesMap[string(hash.Sum([]byte(dat)))] = append(fh.fileNamesMap[string(hash.Sum([]byte(dat)))], fn)
+						fh.fileNamesMap[key] = append(fh.fileNamesMap[key], fn)
 					}
 				} else {
 					return err
