@@ -60,7 +60,7 @@ func main() {
 
 	for _, value := range valuesArray {
 		ma.AddValue(value)
-		fmt.Print("\n Moving Average: ", ma.values)
+		fmt.Print("\n Adding value ", value, " and here's the moving window and average: ", ma.values)
 		fmt.Printf(" %.2f", ma.GetAverage())
 	}
 }
